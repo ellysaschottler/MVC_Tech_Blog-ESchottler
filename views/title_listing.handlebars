@@ -1,15 +1,19 @@
 //handlebars to list titles / dates of the posts
-{{#each blog_post}}
+
+//handlebars to list titles / dates of the posts
+{{#each posts}}
+<a href=posts/"{{id}}">
 <div class="container-sm my-3 d-grid gap-2">
     <button class="btn btn-primary" type="button">
     <div class="row">
     <div class="col-8">
-        {{title}}
+        {{blog_title}}
     </div>
     <div class="col-4">
-        <p class="text-end">{{date}}</p>
+        <p class="text-end">{{blog_date}}</p>
     </div>
     </div>
     </button>
 </div>
+</a>
 {{/each}}

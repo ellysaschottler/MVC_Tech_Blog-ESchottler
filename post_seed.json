@@ -1,10 +1,12 @@
 [
     {
-        "title": "New Technology",
-        "timestamp": "9/5/2015"
+        "post_title": "New Technology",
+        "post_content": "Lots of Random stuff I don't know what to type about.  More sentences to make it longer.  One last sententce so we can see how the word wrapping looks.",
+        "post_date": "9/5/2015"
     },
     {
-        "title": "JavaScript",
-        "timestamp": "10/51/2019"
+        "post_title": "JavaScript",
+        "post_content": "This content will be shorter, for variety",
+        "post_date": "10/51/2019"
     }
 ]
