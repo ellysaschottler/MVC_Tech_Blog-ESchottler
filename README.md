@@ -1,6 +1,8 @@
 # MVC_Tech_Blog-ESchottler
 A CMS style blog following the Model-View-Controller paradigm.
 
+URL: https://mvc-techblog.onrender.com
+
 
 GIVEN a CMS-style blog site
 WHEN I visit the site for the first time

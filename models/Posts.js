@@ -21,7 +21,16 @@ Posts.init(
     },
     post_date: {
         type: DataTypes.DATE,
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      ALLOWnULL: false,
+      references: {
+        model: 'user',
+        key: 'id'
+      }
     }
+
   },
   {
     sequelize,
