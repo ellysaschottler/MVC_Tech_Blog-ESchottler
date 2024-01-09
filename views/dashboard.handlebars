@@ -1,6 +1,7 @@
-//handlebars to list titles / dates of the posts
+{{!-- //handlebars to list titles / dates of the posts and have +New Post button--}}
 
-//handlebars to list titles / dates of the posts
+<h1>Your Dashboard</h1>
+
 {{#each posts}}
 <a href=posts/"{{id}}">
 <div class="container-sm my-3 d-grid gap-2">
@@ -17,3 +18,5 @@
 </div>
 </a>
 {{/each}}
+
+<button class='btn btn-secondary'>+New Post</button>

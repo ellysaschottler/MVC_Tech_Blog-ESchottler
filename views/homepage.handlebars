@@ -1,30 +1,15 @@
 {{!-- // this handlebar displays the blog posts from the database - to do - an each statement to get each blog post --}}
 
-<div class="container-sm my-3">
-    <div class="row p-2 border">
-    <div class="col-8">
-        This will be the title of the blog post.
-    </div>
-    <div class="col-4">
-        <p class="text-end">Posted by ES 5/20/15</p>
-    </div>
-    </div>
-    <div class="row p-2 border">
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-    </div>
-</div>
-
-
 {{#each posts}}
 <div class="border">
-  <div class="container-sm my-3 d-grid gap-2">
+    <div class="container-sm my-3 d-grid gap-2">
     <button class="btn btn-primary" type="button">
     <div class="row">
     <div class="col-8">
         <a href="/post/{{id}}">{{post_title}}The Title</a>
     </div>
     <div class="col-4">
-        <p class="text-end">{{post_date}}11/5</p>
+        <p class="text-end">Posted by {{name}} on{{post_date}}11/5</p>
     </div>
     </div>
     </button>
