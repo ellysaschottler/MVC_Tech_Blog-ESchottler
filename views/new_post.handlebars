@@ -10,17 +10,48 @@
 </div>
 <div class="container-sm my-3 d-grid gap-2">
     <div class="row">
-        <form id="createPost">
+        <form id="createPost-form">
             <div class="mb-3">
                 <label for="title" class="form-label">Title:</label>
-                <br><input class="form-control" type="textarea" id="title">
+                <br><input class="form-control" type="textarea" id="newTitle">
             </div>
             <div class="mb-3">
                 <label for="Content" class="form-label">Content:</label>
-                <br><input class="form-control" type="textarea" id="content">
+                <br><input class="form-control" type="textarea" id="newContent">
                 </div>
             <button type="submit" class="btn btn-primary btn-sm">Submit</button>
         </form>
     </div>
 </div>
 </div>
+
+<script>
+async function newFormHandler(e) {
+    e.preventDefault();
+    const post_title = document.querySelector('#newTitle').value;
+    const post_content = document.querySelector('#newContent').value;
+    const guest_name = document.querySelector('#guest_name').value;
+
+    // Send fetch request to add a new blog post
+    const response = await fetch(`/api/newpost`, {
+      method: 'POST',
+      body: JSON.stringify({
+        post_title,
+        post_content,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    //if the blog post is added, the the dashboard view will be loaded
+    if (response.ok) {
+      document.location.replace('/dashboard');
+    } else {
+      alert('Failed to add blog post');
+    }
+  }
+  
+  document.querySelector('#createPost-form').addEventListener('submit', newFormHandler);
+
+
+</script>
