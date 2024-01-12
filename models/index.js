@@ -1,7 +1,7 @@
 // import models
-const User = require('./User');
-const Posts = require('./Posts');
-const Comment = require('./Comment');
+const User = require('./User.js');
+const Posts = require('./Posts.js');
+const Comment = require('./Comment.js');
 
 
 //Users have many posts
@@ -14,12 +14,14 @@ Posts.belongsTo(User, {
     foreignKey: 'user_id'
 });
 
+// Users have many comments
+User.hasMany(Comment, {
+    foreignKey: 'user_id'
+})
+
 // Posts have many comments
 Posts.hasMany(Comment, {
     foreignKey: 'post_id'
 })
-// Users have many comments
-User.hasMany(comment, {
-    foreignKey: 'user_id'
-})
+
 module.exports = { User, Posts, Comment };

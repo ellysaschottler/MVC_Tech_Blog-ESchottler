@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User, Posts } = require('../models');
-const withAuth = require('../utils/auth');
+const withAuth = require('../utils/authorization');
 
 router.get('/', withAuth, async (req, res) => {
   try {
@@ -20,12 +20,13 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+
+//if already logged in, sends you to the homepage, else serves up the view if the login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
-
   res.render('login');
 });
 
