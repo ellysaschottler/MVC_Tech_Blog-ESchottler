@@ -17,7 +17,13 @@ const hbs = exphbs.create({ helpers });
 
 const sess = {
   secret: 'The secret words',
-  cookie: {},
+  cookie: {
+    //timeout after 15 minutes
+    maxAge: 1000*60*15,
+    http:true,
+    secure: false,
+    sameSite: 'strict'
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

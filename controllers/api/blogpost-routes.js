@@ -3,7 +3,7 @@ const Posts = require('../../models/Posts');
 const withAuth = require('../../utils/authorization')
 
 // route to create/add a blog post using async/await - takes in the data from the new_post handlebar's form
-router.post('/', withAuth, async (req, res) => {
+router.post('/api/newpost', withAuth, async (req, res) => {
   try { 
     const postData = await Posts.create({
         user_id: req.session.user_id,
