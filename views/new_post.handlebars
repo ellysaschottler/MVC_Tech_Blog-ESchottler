@@ -30,7 +30,6 @@ async function newFormHandler(e) {
     e.preventDefault();
     const post_title = document.querySelector('#newTitle').value;
     const post_content = document.querySelector('#newContent').value;
-    const guest_name = document.querySelector('#guest_name').value;
 
     // Send fetch request to add a new blog post
     const response = await fetch(`/api/newpost`, {
